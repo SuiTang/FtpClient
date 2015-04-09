@@ -10,3 +10,5 @@ mood/mood.xcodeproj/xcuserdata/xdyou.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkp
 mood/mood.xcodeproj/project.xcworkspace/xcshareddata/mood.xccheckout
 
 *.xccheckout
+
+*.xcscheme
