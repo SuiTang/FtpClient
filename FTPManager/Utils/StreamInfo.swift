@@ -36,4 +36,7 @@ class StreamInfo: NSObject {
     func read(request:RequestProtocol)->NSData {
         return NSData()
     }
+    
+    func write(request:RequestProtocol, data:NSData) {
+    }
 }
