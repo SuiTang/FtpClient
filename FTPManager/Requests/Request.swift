@@ -128,7 +128,7 @@ class Request:NSObject, NSStreamDelegate, RequestProtocol {
         }
     }
     
-    var timeout:Int {
+    var timeout:Int64 {
         get {
             return self.streamInfo.timeout;
         }

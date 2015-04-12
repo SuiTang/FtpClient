@@ -17,6 +17,8 @@
 		51AA3C5B1AD7730F00930617 /* Extensons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C561AD770DE00930617 /* Extensons.swift */; };
 		51AA3C5C1AD7731200930617 /* StreamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4351AD6622D004D7F05 /* StreamInfo.swift */; };
 		51AA3C5D1AD7731500930617 /* FTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4271AD647CE004D7F05 /* FTPError.swift */; };
+		51AA3C5F1AD7BD9800930617 /* ListingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C5E1AD7BD9800930617 /* ListingRequest.swift */; };
+		51AA3C601AD7BD9800930617 /* ListingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C5E1AD7BD9800930617 /* ListingRequest.swift */; };
 		E92249F31AD402EB001B6A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92249F21AD402EB001B6A92 /* AppDelegate.swift */; };
 		E92249F51AD402EB001B6A92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92249F41AD402EB001B6A92 /* ViewController.swift */; };
 		E92249F81AD402EB001B6A92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92249F61AD402EB001B6A92 /* Main.storyboard */; };
@@ -43,6 +45,7 @@
 		510BE4351AD6622D004D7F05 /* StreamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamInfo.swift; path = FTPManager/Utils/StreamInfo.swift; sourceTree = "<group>"; };
 		51AA3C561AD770DE00930617 /* Extensons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensons.swift; path = FTPManager/Utils/Extensons.swift; sourceTree = "<group>"; };
 		51AA3C581AD772F700930617 /* RequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
+		51AA3C5E1AD7BD9800930617 /* ListingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingRequest.swift; path = FTPManager/Requests/ListingRequest.swift; sourceTree = "<group>"; };
 		E92249ED1AD402EB001B6A92 /* FtpClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FtpClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92249F11AD402EB001B6A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E92249F21AD402EB001B6A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				510BE4251AD64420004D7F05 /* Request.swift */,
+				51AA3C5E1AD7BD9800930617 /* ListingRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -273,6 +277,7 @@
 			files = (
 				510BE4281AD647CE004D7F05 /* FTPError.swift in Sources */,
 				E92249F51AD402EB001B6A92 /* ViewController.swift in Sources */,
+				51AA3C5F1AD7BD9800930617 /* ListingRequest.swift in Sources */,
 				510BE4261AD64420004D7F05 /* Request.swift in Sources */,
 				51AA3C571AD770DE00930617 /* Extensons.swift in Sources */,
 				510BE4361AD6622D004D7F05 /* StreamInfo.swift in Sources */,
@@ -287,6 +292,7 @@
 			files = (
 				51AA3C5C1AD7731200930617 /* StreamInfo.swift in Sources */,
 				51AA3C5D1AD7731500930617 /* FTPError.swift in Sources */,
+				51AA3C601AD7BD9800930617 /* ListingRequest.swift in Sources */,
 				E9224A091AD402EB001B6A92 /* FtpClientTests.swift in Sources */,
 				51AA3C5B1AD7730F00930617 /* Extensons.swift in Sources */,
 				51AA3C5A1AD7730300930617 /* Request.swift in Sources */,

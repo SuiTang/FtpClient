@@ -43,6 +43,11 @@ enum FTPErrorCode:Int {
 class FTPError:NSObject {
     var errorCode:FTPErrorCode = FTPErrorCode.UnknownError
     
+    init(errorCode:FTPErrorCode) {
+        super.init();
+        self.errorCode = errorCode;
+    }
+    
     var message:String {
         get {
             switch (self.errorCode) {
