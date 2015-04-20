@@ -121,24 +121,68 @@ class StreamInfo: NSObject {
         return true;
     }
     
-    func read(request:RequestProtocol)->NSData? {
+    func read(request:Request)->NSData? {
         var data:NSData;
-        var bufferedObject = NSMutableData(length: DefaultBufferSize);
+        var buffer = [UInt8](count:DefaultBufferSize, repeatedValue: 0)
         
-        //bytesThisIteration = readStream?.read(bufferedObject!.bytes, maxLength: DefaultBufferSize);
+        bytesThisIteration = readStream!.read(&buffer, maxLength: DefaultBufferSize);
+        self.bytesTotal += bytesThisIteration;
         
-        return NSData()
+        if bytesThisIteration > 0 {
+            data = NSData(bytes: buffer, length: bytesThisIteration);
+            request.percentCompleted = bytesTotal/request.maximumSize;
+            request.delegate.percentCompleted?(request.percentCompleted, request: request);
+            return data;
+        }else if bytesThisIteration == 0 {
+            // return no data, but this isn't an error... just the end of the file
+            return NSData();
+        }
+        
+        // otherwise we had an error, return an error
+        self.streamError(request, errorCode: FTPErrorCode.ClientCantReadStream);
+        return nil;
     }
     
-    func write(request:RequestProtocol, data:NSData) {
+    func write(request:Request, data:NSData)->Bool {
+        var bytes = UnsafePointer<UInt8>(data.bytes)
+        var length: NSInteger = data.length
+        bytesThisIteration = self.writeStream!.write(bytes, maxLength: length);
+        bytesTotal += bytesThisIteration;
+        
+        if bytesThisIteration > 0 {
+            request.percentCompleted = bytesTotal/request.maximumSize;
+            request.delegate.percentCompleted?(request.percentCompleted, request: request);
+            return true;
+        }else if bytesThisIteration == 0 {
+            return true;
+        }
+        
+        self.streamError(request, errorCode: FTPErrorCode.ClientCantWriteStream)
+        return false
     }
     
-    func streamError(request:RequestProtocol, errorCode:FTPErrorCode) {
+    func streamError(request:Request, errorCode:FTPErrorCode) {
+        request.error = FTPError(errorCode: errorCode)
+        request.delegate.requestFailed(request)
+        request.streamInfo.close(request)
     }
     
-    func streamComplete(request:RequestProtocol) {
+    func streamComplete(request:Request) {
+        request.delegate.requestCompleted(request)
+        request.streamInfo.close(request)
     }
     
     func close(request:RequestProtocol) {
+        if readStream != nil {
+            readStream!.close()
+            readStream!.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            readStream = nil
+        }
+        
+        if writeStream != nil {
+            writeStream!.close()
+            writeStream!.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            writeStream = nil
+        }
     }
 }

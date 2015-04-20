@@ -11,6 +11,7 @@
 		510BE4261AD64420004D7F05 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4251AD64420004D7F05 /* Request.swift */; };
 		510BE4281AD647CE004D7F05 /* FTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4271AD647CE004D7F05 /* FTPError.swift */; };
 		510BE4361AD6622D004D7F05 /* StreamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4351AD6622D004D7F05 /* StreamInfo.swift */; };
+		512E63A21AE4E5D30028B974 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512E63A11AE4E5D30028B974 /* Calculation.swift */; };
 		51AA3C571AD770DE00930617 /* Extensons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C561AD770DE00930617 /* Extensons.swift */; };
 		51AA3C591AD772F700930617 /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C581AD772F700930617 /* RequestTest.swift */; };
 		51AA3C5A1AD7730300930617 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4251AD64420004D7F05 /* Request.swift */; };
@@ -43,6 +44,7 @@
 		510BE4251AD64420004D7F05 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = FTPManager/Requests/Request.swift; sourceTree = "<group>"; };
 		510BE4271AD647CE004D7F05 /* FTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FTPError.swift; path = FTPManager/Utils/FTPError.swift; sourceTree = "<group>"; };
 		510BE4351AD6622D004D7F05 /* StreamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamInfo.swift; path = FTPManager/Utils/StreamInfo.swift; sourceTree = "<group>"; };
+		512E63A11AE4E5D30028B974 /* Calculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		51AA3C561AD770DE00930617 /* Extensons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensons.swift; path = FTPManager/Utils/Extensons.swift; sourceTree = "<group>"; };
 		51AA3C581AD772F700930617 /* RequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
 		51AA3C5E1AD7BD9800930617 /* ListingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingRequest.swift; path = FTPManager/Requests/ListingRequest.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		510BE4241AD64330004D7F05 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				512E63A11AE4E5D30028B974 /* Calculation.swift */,
 				510BE4271AD647CE004D7F05 /* FTPError.swift */,
 				510BE4351AD6622D004D7F05 /* StreamInfo.swift */,
 				51AA3C561AD770DE00930617 /* Extensons.swift */,
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				510BE4281AD647CE004D7F05 /* FTPError.swift in Sources */,
+				512E63A21AE4E5D30028B974 /* Calculation.swift in Sources */,
 				E92249F51AD402EB001B6A92 /* ViewController.swift in Sources */,
 				51AA3C5F1AD7BD9800930617 /* ListingRequest.swift in Sources */,
 				510BE4261AD64420004D7F05 /* Request.swift in Sources */,
