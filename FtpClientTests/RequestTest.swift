@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 
 class RequestTest: XCTestCase, RequestDelegate, RequestDataSource {
-    var request:Request!;
+    var request:ListingRequest!
     
     var hostname = "svn.kingoit.com"
     
@@ -20,7 +20,7 @@ class RequestTest: XCTestCase, RequestDelegate, RequestDataSource {
 
     override func setUp() {
         super.setUp()
-        self.request = Request(delegate: self, dataSource: self);
+        self.request = ListingRequest(delegate: self, dataSource: self);
     }
     
     override func tearDown() {
@@ -69,6 +69,10 @@ class RequestTest: XCTestCase, RequestDelegate, RequestDataSource {
         }
     }
     
+    func testListingRequest() {
+        request.start()
+    }
+    
     func hostnameForRequest(request: RequestProtocol) -> String {
         return hostname;
     }
@@ -82,11 +86,16 @@ class RequestTest: XCTestCase, RequestDelegate, RequestDataSource {
     }
     
     func requestCompleted(request: RequestProtocol) {
-        
+        if let listingRquest = request as? ListingRequest {
+            for dic in listingRquest.filesInfo {
+                var name = dic.valueForKey(kCFFTPResourceName as String) as? String
+                println(name)
+            }
+        }
     }
     
     func requestFailed(request: RequestProtocol) {
-        
+        println(request.error?.description)
     }
 
 }

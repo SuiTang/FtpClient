@@ -130,7 +130,7 @@ class StreamInfo: NSObject {
         
         if bytesThisIteration > 0 {
             data = NSData(bytes: buffer, length: bytesThisIteration);
-            request.percentCompleted = bytesTotal/request.maximumSize;
+            request.percentCompleted = Float(bytesTotal)/request.maximumSize;
             request.delegate.percentCompleted?(request.percentCompleted, request: request);
             return data;
         }else if bytesThisIteration == 0 {
@@ -150,7 +150,7 @@ class StreamInfo: NSObject {
         bytesTotal += bytesThisIteration;
         
         if bytesThisIteration > 0 {
-            request.percentCompleted = bytesTotal/request.maximumSize;
+            request.percentCompleted = Float(bytesTotal)/request.maximumSize;
             request.delegate.percentCompleted?(request.percentCompleted, request: request);
             return true;
         }else if bytesThisIteration == 0 {

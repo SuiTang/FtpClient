@@ -91,11 +91,12 @@ class Request:NSObject, NSStreamDelegate, RequestProtocol {
     var uuid:String = NSUUID().UUIDString
     
     /// The request path, when request the ftp server, this is the directory at server
+    var _path:String = ""
     var path:String {
         get {
             // we remove all the extra slashes from the directory path, including the last one (if there is one)
             // we also escape it
-            var escapedPath = self.path.stringByStandardizingPath;
+            var escapedPath = _path.stringByStandardizingPath;
             
             if !(escapedPath as NSString).absolutePath {
                 escapedPath = "/\(escapedPath)";
@@ -104,7 +105,7 @@ class Request:NSObject, NSStreamDelegate, RequestProtocol {
         }
         
         set {
-            self.path = newValue;
+            _path = newValue;
         }
     }
     

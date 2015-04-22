@@ -1,18 +1,35 @@
-mood/mood.xcodeproj/
-mood/mood.xcodeproj/project.pbxproj
-
-mood/mood.xcodeproj/project.xcworkspace/xcuserdata/xdyou.xcuserdatad/UserInterfaceState.xcuserstate
-
-mood/mood.xcodeproj/project.xcworkspace/xcuserdata/xdyou.xcuserdatad/UserInterfaceState.xcuserstate
-
-mood/mood.xcodeproj/xcuserdata/xdyou.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
-
-mood/mood.xcodeproj/project.xcworkspace/xcshareddata/mood.xccheckout
-
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
 *.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
 
-*.xcscheme
+# OS X
+.DS_Store
 
-FtpClient.xcodeproj/project.xcworkspace/xcuserdata/xdyou.xcuserdatad/UserInterfaceState.xcuserstate
+# Vim
+*~
+.*.sw*
 
-FtpClient.xcodeproj/xcuserdata/xdyou.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+# IDEA
+.idea
+
+Carthage/
+
+# Saved Sync credentials for tests.
+signedInUser.json
+
+# Pod 
+Pods/
