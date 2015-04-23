@@ -118,10 +118,24 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
         
         self.refreshView.startRefresh()
         
-//        if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ListViewController") as? ListViewController {
 //            listViewController.server = server
 //            self.navigationController?.pushViewController(listViewController, animated: true)
-//        }
+        var checkLoginQueue = dispatch_queue_create("check login", nil)
+        dispatch_async(checkLoginQueue, { () -> Void in
+            var manager = FTPManager()
+            if manager.checkLogin(self.server) {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ListViewController") as? ListViewController {
+                        self.refreshView.finishRefresh()
+                        listViewController.server = self.server
+                        self.navigationController?.pushViewController(listViewController, animated: true)
+                    }
+                })
+            }else {
+                self.refreshView.finishRefresh()
+            }
+            
+        })
     }
     
     @IBAction func addFavorite(sender: AnyObject) {
