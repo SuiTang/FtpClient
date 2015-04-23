@@ -7,3 +7,5 @@ use_frameworks!
 
 pod 'FTPManager'
 pod 'DLSFTPClient'
+pod 'Snap'
+pod 'KLCPopup'

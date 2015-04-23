@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,9 +20,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
 
+    @IBAction func login(sender: AnyObject) {
+        if let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FTPLoginViewController") as? UIViewController {
+            self.navigationController?.pushViewController(loginViewController, animated: true)
+        }
+    }
 }
 

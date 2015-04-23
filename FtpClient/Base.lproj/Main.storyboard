@@ -4,6 +4,67 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
+        <!--Login-->
+        <scene sceneID="E3O-os-7AW">
+            <objects>
+                <viewController restorationIdentifier="FTPLoginViewController" storyboardIdentifier="FTPLoginViewController" title="Login" id="GIM-Js-XhQ" customClass="FTPLoginViewController" customModule="FtpClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DPB-jH-fAn"/>
+                        <viewControllerLayoutGuide type="bottom" id="MjM-Gu-fod"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AUU-Uq-Fgv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rq1-pw-uax">
+                                <rect key="frame" x="40" y="100" width="520" height="400"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZS-uI-RDT">
+                                        <rect key="frame" x="-1" y="344" width="59" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="59" id="Eya-df-2Dj"/>
+                                        </constraints>
+                                        <state key="normal" image="connect-bookmark">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addFavorite:" destination="GIM-Js-XhQ" eventType="touchUpInside" id="7cc-E6-tB5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qZS-uI-RDT" secondAttribute="bottom" constant="20" id="TZS-Ga-6rZ"/>
+                                    <constraint firstAttribute="height" constant="400" id="frJ-Kz-ZRM"/>
+                                    <constraint firstItem="qZS-uI-RDT" firstAttribute="leading" secondItem="Rq1-pw-uax" secondAttribute="leading" constant="-1" id="g6U-JC-DA7"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connect_stamp_ftp" translatesAutoresizingMaskIntoConstraints="NO" id="13k-tr-fPQ">
+                                <rect key="frame" x="530" y="71" width="49" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="5TJ-Xz-mLf"/>
+                                    <constraint firstAttribute="height" constant="49" id="eKo-Ek-X7P"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rq1-pw-uax" secondAttribute="trailing" constant="40" id="H0b-Fz-p3g"/>
+                            <constraint firstItem="Rq1-pw-uax" firstAttribute="top" secondItem="13k-tr-fPQ" secondAttribute="bottom" constant="-20" id="an2-g1-Xnz"/>
+                            <constraint firstAttribute="centerY" secondItem="Rq1-pw-uax" secondAttribute="centerY" id="jbr-Y1-0Ak"/>
+                            <constraint firstItem="13k-tr-fPQ" firstAttribute="leading" secondItem="Rq1-pw-uax" secondAttribute="trailing" constant="-30" id="kPN-Ue-eb6"/>
+                            <constraint firstItem="Rq1-pw-uax" firstAttribute="leading" secondItem="AUU-Uq-Fgv" secondAttribute="leading" constant="40" id="qjY-Zt-u7c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginContainerView" destination="Rq1-pw-uax" id="E1A-O5-NB6"/>
+                        <outlet property="protocolTypeImageView" destination="13k-tr-fPQ" id="68G-KU-RdN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYf-6m-XKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1195" y="-437"/>
+        </scene>
         <!--Developer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -35,6 +96,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tzu-PN-WAk">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="login:" destination="BYZ-38-t0r" id="J8r-TW-R8e"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -65,4 +129,8 @@
             <point key="canvasLocation" x="364" y="-293"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="connect-bookmark" width="59" height="36"/>
+        <image name="connect_stamp_ftp" width="49" height="49"/>
+    </resources>
 </document>
