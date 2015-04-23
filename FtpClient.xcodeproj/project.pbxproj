@@ -16,7 +16,8 @@
 		5107546B1AE89E9B00565C83 /* FTPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5107546A1AE89E9B00565C83 /* FTPLoginViewController.swift */; };
 		5107546F1AE8A5C300565C83 /* SettingSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5107546E1AE8A5C300565C83 /* SettingSectionView.swift */; };
 		510754751AE8CB1E00565C83 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510754741AE8CB1E00565C83 /* BaseViewController.swift */; };
-		510BE4221AD642E9004D7F05 /* FTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4211AD642E9004D7F05 /* FTPManager.swift */; };
+		510754771AE8D1CF00565C83 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510754761AE8D1CF00565C83 /* ListViewController.swift */; };
+		510754791AE8E1C600565C83 /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510754781AE8E1C600565C83 /* RefreshView.swift */; };
 		510BE4261AD64420004D7F05 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4251AD64420004D7F05 /* Request.swift */; };
 		510BE4281AD647CE004D7F05 /* FTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4271AD647CE004D7F05 /* FTPError.swift */; };
 		510BE4361AD6622D004D7F05 /* StreamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4351AD6622D004D7F05 /* StreamInfo.swift */; };
@@ -61,7 +62,8 @@
 		5107546A1AE89E9B00565C83 /* FTPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTPLoginViewController.swift; sourceTree = "<group>"; };
 		5107546E1AE8A5C300565C83 /* SettingSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingSectionView.swift; path = Widgets/SettingSectionView.swift; sourceTree = "<group>"; };
 		510754741AE8CB1E00565C83 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		510BE4211AD642E9004D7F05 /* FTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FTPManager.swift; path = FTPManager/FTPManager.swift; sourceTree = "<group>"; };
+		510754761AE8D1CF00565C83 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		510754781AE8E1C600565C83 /* RefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshView.swift; path = Widgets/RefreshView.swift; sourceTree = "<group>"; };
 		510BE4251AD64420004D7F05 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = FTPManager/Requests/Request.swift; sourceTree = "<group>"; };
 		510BE4271AD647CE004D7F05 /* FTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FTPError.swift; path = FTPManager/Utils/FTPError.swift; sourceTree = "<group>"; };
 		510BE4351AD6622D004D7F05 /* StreamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamInfo.swift; path = FTPManager/Utils/StreamInfo.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				5107546E1AE8A5C300565C83 /* SettingSectionView.swift */,
+				510754781AE8E1C600565C83 /* RefreshView.swift */,
 			);
 			name = Widgets;
 			sourceTree = "<group>";
@@ -142,7 +145,6 @@
 			children = (
 				510BE4241AD64330004D7F05 /* Utils */,
 				510BE4231AD6430E004D7F05 /* Requests */,
-				510BE4211AD642E9004D7F05 /* FTPManager.swift */,
 			);
 			name = FTPManager;
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 				E92249F41AD402EB001B6A92 /* ViewController.swift */,
 				510754661AE89B9E00565C83 /* LoginView.swift */,
 				5107546A1AE89E9B00565C83 /* FTPLoginViewController.swift */,
+				510754761AE8D1CF00565C83 /* ListViewController.swift */,
 				510754741AE8CB1E00565C83 /* BaseViewController.swift */,
 				E92249F61AD402EB001B6A92 /* Main.storyboard */,
 				E92249F91AD402EB001B6A92 /* Images.xcassets */,
@@ -410,13 +413,14 @@
 				E92249F51AD402EB001B6A92 /* ViewController.swift in Sources */,
 				510754551AE7A14F00565C83 /* RootNavigationController.swift in Sources */,
 				510754751AE8CB1E00565C83 /* BaseViewController.swift in Sources */,
+				510754791AE8E1C600565C83 /* RefreshView.swift in Sources */,
+				510754771AE8D1CF00565C83 /* ListViewController.swift in Sources */,
 				51AA3C5F1AD7BD9800930617 /* ListingRequest.swift in Sources */,
 				510BE4261AD64420004D7F05 /* Request.swift in Sources */,
 				5107546F1AE8A5C300565C83 /* SettingSectionView.swift in Sources */,
 				51AA3C571AD770DE00930617 /* Extensons.swift in Sources */,
 				510BE4361AD6622D004D7F05 /* StreamInfo.swift in Sources */,
 				510754671AE89B9E00565C83 /* LoginView.swift in Sources */,
-				510BE4221AD642E9004D7F05 /* FTPManager.swift in Sources */,
 				E92249F31AD402EB001B6A92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

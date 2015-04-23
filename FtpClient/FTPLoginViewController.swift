@@ -8,12 +8,16 @@
 
 import UIKit
 import Snap
+import FTPManager
 
 class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
+    @IBOutlet weak var refreshView: RefreshView!
 
     @IBOutlet weak var protocolTypeImageView: UIImageView!
     
     @IBOutlet weak var loginContainerView: UIView!
+    
+    var server:FMServer?
     
     var serverTextField: UITextField = UITextField(frame: CGRectZero)
     var usernameTextField: UITextField = UITextField(frame: CGRectZero)
@@ -34,6 +38,7 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
         // Server
         serverTextField.placeholder = "Server"
         serverTextField.font = defaultFont
+        serverTextField.keyboardType = UIKeyboardType.URL
         var serverSection = SettingSectionView(frame: CGRectZero)
         serverSection.titleLabel.text = "Server"
         serverSection.contentView = serverTextField
@@ -52,6 +57,8 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
         // Password
         passwordTextField.placeholder = "Password"
         passwordTextField.font = defaultFont
+        passwordTextField.secureTextEntry = true
+        passwordTextField.keyboardType = UIKeyboardType.ASCIICapable
         var passwordSection = SettingSectionView(frame: CGRectZero)
         passwordSection.titleLabel.text = "Password"
         passwordSection.contentView = passwordTextField
@@ -83,6 +90,9 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
             prevView = view
         }
         
+        var loginButton = UIBarButtonItem(title: "Login", style: UIBarButtonItemStyle.Plain, target: self, action: "login:")
+        self.navigationItem.rightBarButtonItem = loginButton
+        
         // Tap 
         var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "keyboardHide:")
         tapGestureRecognizer.cancelsTouchesInView = false
@@ -98,6 +108,20 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func login(sender:AnyObject) {
+        var serverUrl = serverTextField.text
+        var username = usernameTextField.text
+        var password = passwordTextField.text
+        server = FMServer(destination: serverUrl, username: username, password: password)
+        
+        self.refreshView.startRefresh()
+        
+//        if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ListViewController") as? ListViewController {
+//            listViewController.server = server
+//            self.navigationController?.pushViewController(listViewController, animated: true)
+//        }
     }
     
     @IBAction func addFavorite(sender: AnyObject) {
