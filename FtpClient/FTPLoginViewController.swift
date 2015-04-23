@@ -38,6 +38,7 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
         // Server
         serverTextField.placeholder = "Server"
         serverTextField.font = defaultFont
+        serverTextField.text = "svn.kingoit.com"
         serverTextField.keyboardType = UIKeyboardType.URL
         var serverSection = SettingSectionView(frame: CGRectZero)
         serverSection.titleLabel.text = "Server"
@@ -47,6 +48,7 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
         
         // User Name
         usernameTextField.placeholder = "User Name"
+        usernameTextField.text = "zhouzeyong"
         usernameTextField.font = defaultFont
         var usernameSection = SettingSectionView(frame: CGRectZero)
         usernameSection.titleLabel.text = "User Name"
@@ -56,6 +58,7 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
         
         // Password
         passwordTextField.placeholder = "Password"
+        passwordTextField.text = "240383"
         passwordTextField.font = defaultFont
         passwordTextField.secureTextEntry = true
         passwordTextField.keyboardType = UIKeyboardType.ASCIICapable
