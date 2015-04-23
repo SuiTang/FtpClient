@@ -114,12 +114,12 @@ class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
         var serverUrl = serverTextField.text
         var username = usernameTextField.text
         var password = passwordTextField.text
+        
+        // TODO: Check the input string
+        
         server = FMServer(destination: serverUrl, username: username, password: password)
         
         self.refreshView.startRefresh()
-        
-//            listViewController.server = server
-//            self.navigationController?.pushViewController(listViewController, animated: true)
         var checkLoginQueue = dispatch_queue_create("check login", nil)
         dispatch_async(checkLoginQueue, { () -> Void in
             var manager = FTPManager()
