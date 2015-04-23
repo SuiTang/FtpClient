@@ -1,18 +1,19 @@
 //
-//  ViewController.swift
+//  RootNavigationController.swift
 //  FtpClient
 //
-//  Created by ZhouZeyong on 15/4/7.
+//  Created by damingdan on 15/4/22.
 //  Copyright (c) 2015年 ZhouZeyong. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class RootNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,9 +21,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+
+    override func childViewControllerForStatusBarStyle() -> UIViewController? {
+        return self.topViewController
     }
-
 }
-

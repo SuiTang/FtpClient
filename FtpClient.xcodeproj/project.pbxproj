@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		510754531AE79C2300565C83 /* DLSFTPClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510754521AE79C2300565C83 /* DLSFTPClient.framework */; };
+		510754551AE7A14F00565C83 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510754541AE7A14F00565C83 /* RootNavigationController.swift */; };
 		510BE4221AD642E9004D7F05 /* FTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4211AD642E9004D7F05 /* FTPManager.swift */; };
 		510BE4261AD64420004D7F05 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4251AD64420004D7F05 /* Request.swift */; };
 		510BE4281AD647CE004D7F05 /* FTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4271AD647CE004D7F05 /* FTPError.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		4FA4C460F6398E91A23BD5BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		510754521AE79C2300565C83 /* DLSFTPClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DLSFTPClient.framework; path = "Pods/../build/Debug-iphoneos/Pods/DLSFTPClient.framework"; sourceTree = "<group>"; };
+		510754541AE7A14F00565C83 /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		510BE4211AD642E9004D7F05 /* FTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FTPManager.swift; path = FTPManager/FTPManager.swift; sourceTree = "<group>"; };
 		510BE4251AD64420004D7F05 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = FTPManager/Requests/Request.swift; sourceTree = "<group>"; };
 		510BE4271AD647CE004D7F05 /* FTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FTPError.swift; path = FTPManager/Utils/FTPError.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				E92249F21AD402EB001B6A92 /* AppDelegate.swift */,
+				510754541AE7A14F00565C83 /* RootNavigationController.swift */,
 				E92249F41AD402EB001B6A92 /* ViewController.swift */,
 				E92249F61AD402EB001B6A92 /* Main.storyboard */,
 				E92249F91AD402EB001B6A92 /* Images.xcassets */,
@@ -364,6 +367,7 @@
 				510BE4281AD647CE004D7F05 /* FTPError.swift in Sources */,
 				512E63A21AE4E5D30028B974 /* Calculation.swift in Sources */,
 				E92249F51AD402EB001B6A92 /* ViewController.swift in Sources */,
+				510754551AE7A14F00565C83 /* RootNavigationController.swift in Sources */,
 				51AA3C5F1AD7BD9800930617 /* ListingRequest.swift in Sources */,
 				510BE4261AD64420004D7F05 /* Request.swift in Sources */,
 				51AA3C571AD770DE00930617 /* Extensons.swift in Sources */,
