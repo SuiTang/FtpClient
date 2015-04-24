@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FTPManager
 import Snap
 
 let ListCellIdentifier = "ListCell"

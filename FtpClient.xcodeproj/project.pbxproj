@@ -22,7 +22,7 @@
 		510BE4281AD647CE004D7F05 /* FTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4271AD647CE004D7F05 /* FTPError.swift */; };
 		510BE4361AD6622D004D7F05 /* StreamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4351AD6622D004D7F05 /* StreamInfo.swift */; };
 		512E63A21AE4E5D30028B974 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512E63A11AE4E5D30028B974 /* Calculation.swift */; };
-		516A78FC1AE79AB8004ACF97 /* FTPManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516A78FB1AE79AB8004ACF97 /* FTPManager.framework */; };
+		516C16781AE9C9A600D7E39C /* FTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 516C16771AE9C9A600D7E39C /* FTPManager.m */; };
 		51AA3C571AD770DE00930617 /* Extensons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C561AD770DE00930617 /* Extensons.swift */; };
 		51AA3C591AD772F700930617 /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C581AD772F700930617 /* RequestTest.swift */; };
 		51AA3C5A1AD7730300930617 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4251AD64420004D7F05 /* Request.swift */; };
@@ -73,6 +73,9 @@
 		516A78FD1AE79ABE004ACF97 /* FLKAutoLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLKAutoLayout.framework; path = "Pods/../build/Debug-iphoneos/Pods/FLKAutoLayout.framework"; sourceTree = "<group>"; };
 		516A78FF1AE79AC2004ACF97 /* ORStackView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ORStackView.framework; path = "Pods/../build/Debug-iphoneos/Pods/ORStackView.framework"; sourceTree = "<group>"; };
 		516A79011AE79AC6004ACF97 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/Pods/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		516C16751AE9C9A600D7E39C /* FtpClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FtpClient-Bridging-Header.h"; sourceTree = "<group>"; };
+		516C16761AE9C9A600D7E39C /* FTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTPManager.h; path = FTPManager/FTPManager.h; sourceTree = "<group>"; };
+		516C16771AE9C9A600D7E39C /* FTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTPManager.m; path = FTPManager/FTPManager.m; sourceTree = "<group>"; };
 		51AA3C561AD770DE00930617 /* Extensons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensons.swift; path = FTPManager/Utils/Extensons.swift; sourceTree = "<group>"; };
 		51AA3C581AD772F700930617 /* RequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
 		51AA3C5E1AD7BD9800930617 /* ListingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingRequest.swift; path = FTPManager/Requests/ListingRequest.swift; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 				510754651AE89A5900565C83 /* Snap.framework in Frameworks */,
 				510754631AE89A5500565C83 /* KLCPopup.framework in Frameworks */,
 				510754531AE79C2300565C83 /* DLSFTPClient.framework in Frameworks */,
-				516A78FC1AE79AB8004ACF97 /* FTPManager.framework in Frameworks */,
 				E9224A131AD403A6001B6A92 /* CFNetwork.framework in Frameworks */,
 				E423BFBED273B06910CCF5D1 /* Pods.framework in Frameworks */,
 			);
@@ -145,6 +147,9 @@
 			children = (
 				510BE4241AD64330004D7F05 /* Utils */,
 				510BE4231AD6430E004D7F05 /* Requests */,
+				516C16761AE9C9A600D7E39C /* FTPManager.h */,
+				516C16771AE9C9A600D7E39C /* FTPManager.m */,
+				516C16751AE9C9A600D7E39C /* FtpClient-Bridging-Header.h */,
 			);
 			name = FTPManager;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				510BE4261AD64420004D7F05 /* Request.swift in Sources */,
 				5107546F1AE8A5C300565C83 /* SettingSectionView.swift in Sources */,
 				51AA3C571AD770DE00930617 /* Extensons.swift in Sources */,
+				516C16781AE9C9A600D7E39C /* FTPManager.m in Sources */,
 				510BE4361AD6622D004D7F05 /* StreamInfo.swift in Sources */,
 				510754671AE89B9E00565C83 /* LoginView.swift in Sources */,
 				E92249F31AD402EB001B6A92 /* AppDelegate.swift in Sources */,
@@ -555,6 +561,7 @@
 			baseConfigurationReference = 87878505B9469CB0AF46669B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -564,6 +571,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FtpClient-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -572,6 +581,7 @@
 			baseConfigurationReference = 4FA4C460F6398E91A23BD5BE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,6 +591,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FtpClient-Bridging-Header.h";
 			};
 			name = Release;
 		};

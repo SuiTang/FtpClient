@@ -8,7 +8,6 @@
 
 import UIKit
 import Snap
-import FTPManager
 
 class FTPLoginViewController: BaseViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var refreshView: RefreshView!

@@ -5,7 +5,7 @@ use_frameworks!
 #pod 'ORStackView'
 #pod 'SwiftyJSON'
 
-pod 'FTPManager'
+#pod 'FTPManager'
 pod 'DLSFTPClient'
 pod 'Snap'
 pod 'KLCPopup'
