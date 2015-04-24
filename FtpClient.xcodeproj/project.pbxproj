@@ -23,6 +23,8 @@
 		510BE4361AD6622D004D7F05 /* StreamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4351AD6622D004D7F05 /* StreamInfo.swift */; };
 		512E63A21AE4E5D30028B974 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512E63A11AE4E5D30028B974 /* Calculation.swift */; };
 		516C16781AE9C9A600D7E39C /* FTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 516C16771AE9C9A600D7E39C /* FTPManager.m */; };
+		516C167A1AE9F05900D7E39C /* FileTypes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516C16791AE9F05900D7E39C /* FileTypes.xcassets */; };
+		516C167C1AE9F0CD00D7E39C /* FileTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516C167B1AE9F0CD00D7E39C /* FileTypeManager.swift */; };
 		51AA3C571AD770DE00930617 /* Extensons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C561AD770DE00930617 /* Extensons.swift */; };
 		51AA3C591AD772F700930617 /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA3C581AD772F700930617 /* RequestTest.swift */; };
 		51AA3C5A1AD7730300930617 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE4251AD64420004D7F05 /* Request.swift */; };
@@ -76,6 +78,8 @@
 		516C16751AE9C9A600D7E39C /* FtpClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FtpClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		516C16761AE9C9A600D7E39C /* FTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTPManager.h; path = FTPManager/FTPManager.h; sourceTree = "<group>"; };
 		516C16771AE9C9A600D7E39C /* FTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTPManager.m; path = FTPManager/FTPManager.m; sourceTree = "<group>"; };
+		516C16791AE9F05900D7E39C /* FileTypes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FileTypes.xcassets; sourceTree = "<group>"; };
+		516C167B1AE9F0CD00D7E39C /* FileTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileTypeManager.swift; path = Utils/FileTypeManager.swift; sourceTree = "<group>"; };
 		51AA3C561AD770DE00930617 /* Extensons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensons.swift; path = FTPManager/Utils/Extensons.swift; sourceTree = "<group>"; };
 		51AA3C581AD772F700930617 /* RequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
 		51AA3C5E1AD7BD9800930617 /* ListingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingRequest.swift; path = FTPManager/Requests/ListingRequest.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		5107546C1AE8A4E800565C83 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				516C167B1AE9F0CD00D7E39C /* FileTypeManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				E92249FB1AD402EB001B6A92 /* LaunchScreen.xib */,
 				E92249F01AD402EB001B6A92 /* Supporting Files */,
 				510754681AE89D6100565C83 /* Media.xcassets */,
+				516C16791AE9F05900D7E39C /* FileTypes.xcassets */,
 			);
 			path = FtpClient;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 				E92249FD1AD402EB001B6A92 /* LaunchScreen.xib in Resources */,
 				510754691AE89D6100565C83 /* Media.xcassets in Resources */,
 				E92249FA1AD402EB001B6A92 /* Images.xcassets in Resources */,
+				516C167A1AE9F05900D7E39C /* FileTypes.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +428,7 @@
 				510754791AE8E1C600565C83 /* RefreshView.swift in Sources */,
 				510754771AE8D1CF00565C83 /* ListViewController.swift in Sources */,
 				51AA3C5F1AD7BD9800930617 /* ListingRequest.swift in Sources */,
+				516C167C1AE9F0CD00D7E39C /* FileTypeManager.swift in Sources */,
 				510BE4261AD64420004D7F05 /* Request.swift in Sources */,
 				5107546F1AE8A5C300565C83 /* SettingSectionView.swift in Sources */,
 				51AA3C571AD770DE00930617 /* Extensons.swift in Sources */,

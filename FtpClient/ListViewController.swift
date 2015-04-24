@@ -11,16 +11,80 @@ import Snap
 
 let ListCellIdentifier = "ListCell"
 
+class ListTableViewCell: UITableViewCell {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    @IBOutlet weak var fileTypeImageView:UIImageView!
+    @IBOutlet weak var titleLabel:UILabel!
+    @IBOutlet weak var descriptionLabel:UILabel!
+    @IBOutlet weak var detailImageView:UIImageView!
+    
+    func configCell(fileInfo:NSDictionary) {
+        var fileName = ""
+        if let name = fileInfo.objectForKey(kCFFTPResourceName) as? String {
+            titleLabel.text = name
+            fileName = name
+        }
+        
+        var createDate = NSDate()
+        var fileSize:Float = 0
+        if let date = fileInfo.objectForKey(kCFFTPResourceModDate) as? NSDate {
+            createDate = date
+        }
+        
+        if let size = fileInfo.objectForKey(kCFFTPResourceSize) as? Float {
+            fileSize = size
+        }
+        
+        var formatter = NSDateFormatter()
+        formatter.dateFormat = "MM dd, yyyy, HH:mm:ss"
+        var createDateStr = formatter.stringFromDate(createDate)
+        descriptionLabel.text = "\(createDateStr)  \(fileSize)"
+        
+        if let type = fileInfo.objectForKey(kCFFTPResourceType) as? NSNumber {
+            if type.intValue == DT_DIR {
+                self.fileTypeImageView.image = UIImage(named: "folder")
+                self.detailImageView.hidden = false
+            }else if type.intValue == DT_REG {
+                var fileExtension = fileName.pathExtension
+                self.fileTypeImageView.image = FileTypeManager(fileExtension: fileExtension).image
+                self.detailImageView.hidden = true
+            }else {
+                self.detailImageView.hidden = true
+            }
+        }else {
+            self.fileTypeImageView.image = UIImage(named: "blank")
+            self.detailImageView.hidden = true
+        }
+    }
+}
+
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
     var refreshView:RefreshView = RefreshView(frame: CGRectZero);
     
     var manager:FTPManager = FTPManager()
     
     var server:FMServer!
     
-    var files:[AnyObject] = []
+    var files:[AnyObject] = [] {
+        didSet {
+            // Remove . and ..
+            for var i = 0; i<self.files.count; i++ {
+                var fileInfo = self.files[i] as? NSDictionary
+                if let name = fileInfo?.objectForKey(kCFFTPResourceName) as? String {
+                    if name == "." || name == ".." {
+                        self.files.removeAtIndex(i)
+                    }
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,15 +127,25 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(ListCellIdentifier) as? UITableViewCell
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: ListCellIdentifier)
-        }
+        var cell = tableView.dequeueReusableCellWithIdentifier(ListCellIdentifier) as? ListTableViewCell
+        
         if let dic = self.files[indexPath.row] as? NSDictionary {
-            cell?.textLabel?.text = dic.objectForKey(kCFFTPResourceName) as? String
+            cell?.configCell(dic)
         }
         
         return cell!
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let name = self.files[indexPath.row].objectForKey(kCFFTPResourceName) as? String {
+            if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ListViewController") as? ListViewController {
+                //self.navigationController?.pushViewController(listViewController, animated: true)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
